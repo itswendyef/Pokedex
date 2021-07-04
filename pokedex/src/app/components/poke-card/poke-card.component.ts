@@ -8,18 +8,25 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 })
 export class PokeCardComponent implements OnInit {
 	pokemons: any[] = [];
+	page = 0;
+	totalPokemons: number = 1118;
+
   constructor(private pokeDb: PokemonService) { }
 
   ngOnInit(): void {
-		this.pokeDb.getPokemons().subscribe((res: any) => {
-			res.results.forEach((results: any) => {
-				this.pokeDb.getPokemon(results.name).subscribe((pokeInfo: any) => {
-					this.pokemons.push(pokeInfo);
-					console.log(pokeInfo);
-				})
-			});
-			//console.log(res);
+	  this.getPokemons();
+  }
+
+  getPokemons(){
+	this.pokeDb.getPokemons(this.page*18).subscribe((res: any) => {
+		this.totalPokemons = res.count;
+		res.results.forEach((results: any) => {
+			this.pokeDb.getPokemon(results.name).subscribe((pokeInfo: any) => {
+				this.pokemons.push(pokeInfo);
+				console.log(pokeInfo);
+			})
 		});
+	});
   }
 
 }

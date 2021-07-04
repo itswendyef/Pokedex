@@ -10,8 +10,8 @@ export class PokemonService {
 
   constructor(private http: HttpClient) { }
 
-  getPokemons(){
-    return this.http.get<any>(`${this.baseUrl}/pokemon?limit=18`);
+  getPokemons(offset: number){
+    return this.http.get<any>(`${this.baseUrl}/pokemon?limit=18&offset=${offset}`);
   }
 
   getPokemon(name: string){

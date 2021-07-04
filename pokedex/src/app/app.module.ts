@@ -8,6 +8,7 @@ import { PokeCardComponent } from './components/poke-card/poke-card.component';
 import { SearchbarComponent } from './components/searchbar/searchbar.component';
 import { PaginationComponent } from './components/pagination/pagination.component';
 import { PokeDetailComponent } from './components/poke-detail/poke-detail.component';
+import { NgxPaginationModule } from 'ngx-pagination';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { PokeDetailComponent } from './components/poke-detail/poke-detail.compon
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]
