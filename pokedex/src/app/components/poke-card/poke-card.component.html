@@ -1,0 +1,13 @@
+<div class="container"> 
+    <div class="row">
+      <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12" style="padding-top: 16px;" *ngFor='let pokemon of pokemons'>
+        <div class="card" >
+          <div class="card-body" style="text-align: center;">
+            <img src= {{pokemon.sprites.back_default}}>
+            <h6 class="card-title">{{pokemon.name}}</h6>
+            <p class="card-subtitle mb-2 text-muted">{{pokemon.id}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
