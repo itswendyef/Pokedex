@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 
 //COMPONENTS
 import { PokeCardComponent } from './components/poke-card/poke-card.component';
-import { PaginationComponent } from './components/pagination/pagination.component';
 import { PokeDetailComponent } from './components/poke-detail/poke-detail.component';
 
 //PIPES
@@ -23,7 +22,6 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
   declarations: [
     AppComponent,
     PokeCardComponent,
-    PaginationComponent,
     PokeDetailComponent,
     FilterPipe
   ],

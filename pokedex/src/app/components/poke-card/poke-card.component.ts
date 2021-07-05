@@ -13,6 +13,8 @@ export class PokeCardComponent implements OnInit {
 	page = 1;
 	totalPokemons: number = 1118;
 	pokemonFilter: string = '';
+	indexs: number[] = [];
+	sortPokemons: any[] = [];
 
   constructor(
 	  private pokeDb: PokemonService,
@@ -29,9 +31,9 @@ export class PokeCardComponent implements OnInit {
 		res.results.forEach((results: any) => {
 			this.pokeDb.getPokemon(results.name).subscribe((pokeInfo: any) => {
 				this.pokemons.push(pokeInfo);
-				//console.log(pokeInfo);
 			})
 		});
+		
 	});
   }
 
