@@ -16,6 +16,7 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule } from '@angular/forms';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     NgxPaginationModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

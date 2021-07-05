@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PokemonService } from 'src/app/services/pokemon.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { PokeDetailComponent } from '../poke-detail/poke-detail.component';
 
 @Component({
   selector: 'app-poke-card',
@@ -12,7 +14,10 @@ export class PokeCardComponent implements OnInit {
 	totalPokemons: number = 1118;
 	pokemonFilter: string = '';
 
-  constructor(private pokeDb: PokemonService) { }
+  constructor(
+	  private pokeDb: PokemonService,
+	  private ngbModal: NgbModal
+	) { }
 
   ngOnInit(): void {
 	  this.getPokemons();
@@ -29,5 +34,20 @@ export class PokeCardComponent implements OnInit {
 		});
 	});
   }
+
+  padLeadingZeros(num:number, size:number) {
+    var s = num+"";
+    while (s.length < size) s = "0" + s;
+    return s;
+  }
+
+	capitalizeFirstLetter(string: string) {
+		return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
+  openModal(pokemon: any){
+	const modalRef= this.ngbModal.open(PokeDetailComponent, {size: 'md', backdrop: 'static'});	
+	modalRef.componentInstance.pokemon = pokemon;
+}
 
 }
