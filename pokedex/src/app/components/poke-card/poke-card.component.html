@@ -1,7 +1,17 @@
 <div class="container"> 
     <div class="row">
+      <div class="col-lg-2 col-md-0 col-sm-0 col-xs-0"></div>
+      <div class="col-lg-8 col-md-10 col-sm-12 col-xs-12">
+        <form class="form-inline">
+          <input type="text" class="form-control" name="pokemonFilter"  placeholder="Search by keywords" [(ngModel)]="pokemonFilter">
+        </form>
+      </div>
+      <div class="col-lg-2 col-md-0 col-sm-0 col-xs-0"></div>
+    </div>
+
+    <div class="row">
       <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12" style="padding-top: 16px;" 
-        *ngFor='let pokemon of pokemons | paginate: { itemsPerPage: 18, currentPage: page, totalItems: totalPokemons }'>
+        *ngFor='let pokemon of pokemons | filter:pokemonFilter | paginate:{ itemsPerPage: 18, currentPage: page, totalItems: totalPokemons}' >
         <div class="card">
           <div class="card-body" style="text-align: center;">
             <img src= {{pokemon.sprites.back_default}}>

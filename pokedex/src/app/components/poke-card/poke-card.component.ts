@@ -8,8 +8,9 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 })
 export class PokeCardComponent implements OnInit {
 	pokemons: any[] = [];
-	page = 0;
+	page = 1;
 	totalPokemons: number = 1118;
+	pokemonFilter: string = '';
 
   constructor(private pokeDb: PokemonService) { }
 
@@ -18,12 +19,12 @@ export class PokeCardComponent implements OnInit {
   }
 
   getPokemons(){
-	this.pokeDb.getPokemons(this.page*18).subscribe((res: any) => {
+	this.pokeDb.getPokemons(18*(this.page - 1)).subscribe((res: any) => {
 		this.totalPokemons = res.count;
 		res.results.forEach((results: any) => {
 			this.pokeDb.getPokemon(results.name).subscribe((pokeInfo: any) => {
 				this.pokemons.push(pokeInfo);
-				console.log(pokeInfo);
+				//console.log(pokeInfo);
 			})
 		});
 	});
