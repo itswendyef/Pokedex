@@ -22,3 +22,20 @@
 .separator:not(:empty)::after {
   margin-left: 1em;
 }
+
+.wrap{
+  padding:10px;
+  float:left;
+  width:150px;
+  text-align:center;
+  -webkit-box-shadow: 0 0 20px 0 rgba(0,0,0,.3);
+  box-shadow: 0 0 20px 0 rgba(0,0,0,.3);
+  margin:20px;
+}
+
+.centered{
+  align-items: center; 
+  text-align: center; 
+  padding-right: 1rem;
+  padding-left: 1rem;
+}

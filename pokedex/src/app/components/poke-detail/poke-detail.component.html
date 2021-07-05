@@ -30,9 +30,10 @@
 </div>
 
 <div class="separator">STATISTICS</div>
-<div style="display: flex; align-items: center; text-align: center; padding-left: 2rem;">
+<div class="centered">
+
 	<!--CHART 1-->
-	<div>
+	<div *ngIf="showFirstChart">
 		<div style="display: block;">
 			<canvas baseChart 
 				[datasets]="barChartData"
@@ -44,9 +45,21 @@
 			</canvas>
 		</div>		
 	</div>
+
+	<!--CHART 2-->
+	<div *ngIf="showSecondChart">
+		<div>
+			<div style="display: block">
+				<canvas baseChart
+					[datasets]="radarChartData"
+					[options]="radarChartOptions"
+					[labels]="radarChartLabels"
+					[chartType]="radarChartType">
+				</canvas>
+			</div>
+		</div>
+	</div>
+
+	<button style="margin-top: 1rem; margin-bottom: 1rem;" type="button" class="btn btn-outline-secondary" (click)="changeChart()">Change chart</button>
 </div>
 
-<div class="form-check form-switch">
-	<input class="form-check-input" type="checkbox" [(ngModel)]="showSecondChart">
-	<label class="form-check-label" for="flexSwitchCheckDefault">Change chart</label>
-</div>

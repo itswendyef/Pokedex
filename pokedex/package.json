@@ -24,6 +24,7 @@
     "bootstrap": "^5.0.2",
     "chart.js": "^2.9.4",
     "jquery": "^3.6.0",
+    "ng-toggle": "^1.2.0",
     "ng2-charts": "^2.4.2",
     "ngx-bootstrap": "^2.0.5",
     "ngx-pagination": "^5.1.1",
