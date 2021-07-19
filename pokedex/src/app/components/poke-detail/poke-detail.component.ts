@@ -56,20 +56,4 @@ export class PokeDetailComponent implements OnInit {
     this.ngbModal.dismissAll();
   }
 
-  /* FORMATS */
-  padLeadingZeros(num:number, size:number) {
-    var s = num+"";
-    while (s.length < size) s = "0" + s;
-    return s;
-  }
-  capitalizeFirstLetter(string: string) {
-		return string.charAt(0).toUpperCase() + string.slice(1);
-  }
-  hctToKg(hct: number){
-    return hct/10;
-  }
-  dcmToMtrs(dcm: number){
-    return dcm/10;
-  }
-
 }

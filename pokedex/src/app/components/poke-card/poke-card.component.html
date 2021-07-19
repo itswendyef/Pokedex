@@ -16,8 +16,8 @@
         <div class="card" type="button" (click)="openModal(pokemon)">
           <div class="card-body" style="text-align: center;">
             <img src= {{pokemon.sprites.front_default}}>
-            <h6 class="card-title">{{capitalizeFirstLetter(pokemon.name)}}</h6>
-            <p class="card-subtitle mb-2 text-muted">#{{padLeadingZeros(pokemon.id,3)}}</p>
+            <h6 class="card-title">{{pokemon.name | titleCase}}</h6>
+            <p class="card-subtitle mb-2 text-muted">{{pokemon.id | pokedexNumberFormat }}</p>
           </div>
         </div>
       </div>

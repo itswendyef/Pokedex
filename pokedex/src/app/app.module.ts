@@ -9,7 +9,10 @@ import { PokeCardComponent } from './components/poke-card/poke-card.component';
 import { PokeDetailComponent } from './components/poke-detail/poke-detail.component';
 
 //PIPES
-import { FilterPipe } from './pipes/filter.pipe';
+import { FilterPipe } from './pipes/filter/filter.pipe';
+import { PokedexNumberFormatPipe } from './pipes/formats/pokedex-number-format/pokedex-number-format.pipe';
+import { TitleCasePipe } from './pipes/formats/title-case-word/title-case.pipe';
+import { DecimalPipe } from './pipes/formats/decimal/decimal.pipe';
 
 //OTHERS
 import { HttpClientModule } from '@angular/common/http';
@@ -18,12 +21,16 @@ import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ChartsModule } from 'ng2-charts';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     AppComponent,
     PokeCardComponent,
     PokeDetailComponent,
-    FilterPipe
+    FilterPipe,
+    PokedexNumberFormatPipe,
+    TitleCasePipe,
+    DecimalPipe
   ],
   imports: [
     BrowserModule,

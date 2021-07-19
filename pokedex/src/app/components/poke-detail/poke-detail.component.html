@@ -10,16 +10,16 @@
 				<div class="col-lg-4 col-md-3 col-sm-12 col-xs-12"> <img src= {{pokemon.sprites.front_default}}> </div>
 				<div class="col-lg-4 col-md-3 col-sm-12 col-xs-12">
 					<div class="row">
-						<div class="col-12">#{{padLeadingZeros(pokemon.id,3)}} </div>
-						<div class="col-12"><h5>{{capitalizeFirstLetter(pokemon.name)}}</h5><b></b></div>
+						<div class="col-12">{{pokemon.id | pokedexNumberFormat}} </div>
+						<div class="col-12"><h5>{{pokemon.name | titleCase }}</h5><b></b></div>
 						<div class="col-12">
 							<h5><span class="badge bg-dark">{{pokemon.types[0].type.name}}</span></h5>
 						</div>
 					</div>
 				</div>	
 				<div class="col-lg-4 col-md-3 col-sm-3 col-xs-12">
-					<div class="col-12"> <b>Height:</b> {{dcmToMtrs(pokemon.height)}}m</div>
-						<div class="col-12"><b>Weight:</b> {{hctToKg(pokemon.weight)}}kg</div>
+					<div class="col-12"> <b>Height:</b> {{pokemon.height | decimal}}m</div>
+						<div class="col-12"><b>Weight:</b> {{pokemon.weight | decimal}}kg</div>
 				</div>
 			</div>
 			<div class="row">
